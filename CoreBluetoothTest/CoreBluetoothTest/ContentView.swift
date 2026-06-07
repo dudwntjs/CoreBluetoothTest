@@ -10,7 +10,6 @@ import SwiftUI
 struct ContentView: View {
 
     @State private var model = BLEModel()
-    @State private var bleManager: iPhoneBLEPeripheralManager?
 
     var body: some View {
         NavigationStack {
@@ -59,11 +58,6 @@ struct ContentView: View {
             }
             .padding()
             .navigationTitle("iPhone Peripheral")
-            .onAppear {
-                if bleManager == nil {
-                    bleManager = iPhoneBLEPeripheralManager(model: model)
-                }
-            }
         }
     }
 }
